@@ -1,7 +1,11 @@
 from django.db import models
 from django.urls.conf import path
+from django.contrib.auth.models import Group
 
 # Create your models here.
+
+Group.add_to_class('description', models.CharField(max_length=180,null=True, blank=True))
+
 
 
 class CustomGroup(models.Model):
@@ -11,7 +15,7 @@ class CustomGroup(models.Model):
     description = models.CharField(max_length=200, verbose_name='Description of the group')
 
     def __str__(self):
-        return 'User: {}'.format(self.name)
+        return 'Group: {}'.format(self.name)
 
 
 class CustomUser(models.Model):
