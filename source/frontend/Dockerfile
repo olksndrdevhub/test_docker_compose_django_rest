@@ -28,7 +28,7 @@ RUN npm run build
 #########
 
 # pull official base image
-FROM node:12.18.3-alpine3.9
+FROM node:14.5.0-alpine
 
 # set work directory
 WORKDIR /usr/src/app
